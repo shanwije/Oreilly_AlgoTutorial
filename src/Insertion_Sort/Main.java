@@ -20,13 +20,13 @@ public class Main {
 
     public int [] iSort(int [] arr){
 
-        for(int i =1; i<arr.length;i++){
-            int j = i;
-            while (j>0 && arr[j-1] > arr[j]){
-                int tmp = arr[j-1];
-                arr[j-1] = arr[j];
-                arr[j] =tmp;
-                j = j-1;
+        for(int i =1; i < arr.length; i++){
+
+            for(int j = i; j > 0 && arr[j] < arr[j-1] ; j--){
+                //swapping
+                int tmp = arr[j];
+                arr[j] = arr[j-1];
+                arr[j-1] = tmp;
             }
         }
         return arr;
